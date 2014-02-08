@@ -3,8 +3,30 @@
   width: 600px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
+  height: 300px;
 }
 
 th {
   text-align: left;
+}
+
+div.contestants {
+  /*display: inline;*/
+  float: left;
+  color: #40A070;
+  width: 40%;
+  background-color: #F0A0F9;
+  padding: 5px 5px 15px 5px;
+  margin: 5px 5px 5px 5px;
+}
+
+div.question{
+  float: left;
+  width: 5%;
+  background-color: #F3F3F3;
+}
+
+div.winner{
+  /*width: 100%*/
+  float:left;
 }
