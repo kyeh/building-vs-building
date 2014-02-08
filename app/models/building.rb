@@ -1,5 +1,9 @@
 class Building < ActiveRecord::Base
   # Remember to create a migration!
+  def self.get_n_random_buildings(n)
+    Building.all.shuffle[0...n]
+  end
+
   def self.get_taller_building(id_a,id_b)
     building_a = self.find(id_a)
     building_b = self.find(id_b)
