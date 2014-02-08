@@ -1,5 +1,7 @@
 get '/' do
-  # Look in app/views/index.erb
+  @list_of_ids = Building.all.map { |building| building.id }
+  @random_building1 = Building.find(@list_of_ids.shuffle!.pop)
+  @random_building2 = Building.find(@list_of_ids.shuffle!.pop)
   erb :index
 end
 
