@@ -1,22 +1,19 @@
-<div class="container">
+<body>
+  <div class='container'>
+    <p>Which is taller?</p>
+    <div class='contestants' id='combatant1'>
+      <%= @random_building1.name %>
+      <img src='#' alt='Combatant 2' title='Combatant 1'>
+    </div>
 
-  <p>Which is taller?</p>
-  <div class="contestants" id='combatant1'>
-    <%= @random_building1.name %>
-    <img src='#' alt='Building 2'>
-  </div>
-  <div class="question">
-    or
-  </div>
-  <div class="contestants" id='combatant2'>
-    <%= @random_building2.name %>
-    <img src='#' alt='Building 2'>
-  </div>
-    <div class="question">
-    ?
-  </div>
-  <div class="winner">
-    <%= @winner.name %> !
-  </div>
+    <div class='contestants' id='combatant2'>
+      <%= @random_building2.name %>
+      <img src='#' alt='Combatant 2' title='Combatant 2'>
+    </div>
 
-</div>
+    <div id='winner'>
+      <%= @winner.name %> !
+    </div>
+
+  </div>
+</body>
