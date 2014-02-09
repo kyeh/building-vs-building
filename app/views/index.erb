@@ -13,6 +13,7 @@
 
     <% if @winner %>
     <div id='winner'>
+      <canvas id="myChart" width="400" height="200"></canvas>
       <p>You answered <%= @guess.name %></p>
         <% if @guess == @winner %>
         <h2>RIGHT</h2>
