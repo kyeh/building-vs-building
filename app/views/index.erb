@@ -26,6 +26,12 @@
       <% end %>
       <a href='/'>Goto next question</a>
     </div>
+    <div class="hide">
+      <input id="building1-name" value="<%= @random_building1.name %>">
+      <input id="building1-height" value="<%= @random_building1.height %>">
+      <input id="building2-name" value="<%= @random_building2.name %>">
+      <input id="building2-height" value="<%= @random_building2.height %>">
+    </div>
     <% else %>
     <div id="choose">
     <form action="/answer" method="post">
