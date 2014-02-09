@@ -1,0 +1,47 @@
+<body>
+  <div class='container'>
+    <div class='sample-of-combatants'>
+      <img src='/img/output3.jpg' alt='Combatant 3' title='Combatant 3'>
+      <img src='/img/output4.jpg' alt='Combatant 4' title='Combatant 4'>
+      <img src='/img/output5.jpg' alt='Combatant 5' title='Combatant 5'>
+      <img src='/img/output6.jpg' alt='Combatant 6' title='Combatant 6'>
+      <img src='/img/output7.jpg' alt='Combatant 7' title='Combatant 7'>
+    </div>
+
+    <p>Which is taller?</p>
+    <div class='contestants' id='combatant1'>
+      <%= @random_building1.name %>
+      <img src='<%= @random_building1.photo_url %>' alt='Combatant 2' title='Combatant 1'>
+    </div>
+
+    <div class='contestants' id='combatant2'>
+      <%= @random_building2.name %>
+      <img src='<%= @random_building2.photo_url %>' alt='Combatant 2' title='Combatant 2'>
+    </div>
+
+    <% if @winner %>
+    <div id='winner'>
+      <p>You answered <%= @guess.name %></p>
+        <% if @guess == @winner %>
+        <h2>RIGHT</h2>
+      <% else %>
+        <h2 class="wrong">WRONG</h2>
+        <%= @winner.name %> !
+        <br>
+      <% end %>
+      <a href='/'>Goto next question</a>
+    </div>
+    <% else %>
+    <div id="choose">
+    <form action="/answer" method="post">
+      <input name="combatant1" value="<%= @random_building1.id %>" type="hidden">
+      <input name="combatant2" value="<%= @random_building2.id %>" type="hidden">
+      <input type="radio" name="taller" value="combatant1"><%= @random_building1.name %><br>
+      <input type="radio" name="taller" value="combatant2"><%= @random_building2.name %><br>
+      <input type="submit" value="Submit">
+    </form>
+    </div>
+    <% end %>
+
+  </div>
+</body>

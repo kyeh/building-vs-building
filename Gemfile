@@ -18,6 +18,7 @@ gem 'rake'
 
 gem 'shotgun'
 gem 'mechanize'
+gem 'mini_magick'
 
 group :test do
   gem 'shoulda-matchers'

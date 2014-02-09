@@ -38,5 +38,14 @@ div.contestants {
 }
 #winner:hover{
   color: #A4A4A4;
-  /*background-color: #EFEFEF;*/
+  background-color: #EFEFEF;
+}
+*/
+
+.wrong {
+  color: red;
+}
+
+.sample-of-combatants {
+  text-align: center;
 }
