@@ -11,4 +11,13 @@ CSV.foreach(File.expand_path('tall_buildings.csv','./db'), {headers: true}) do |
   Building.create(name: row["Building_and_Location"], height: row["height_feet"])
 end
 
+CSV.foreach(File.expand_path('building_urls.csv','./db')) do |row|
+  puts "#{row[0]} --url: #{row[1]}"
+  building = Building.find_by_name(row[0])
+  if building
+    building.photo_url=row[1]
+    building.save
+  end
+end
+
 puts "finished seeding #{Building.count} buildings"
