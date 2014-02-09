@@ -2,6 +2,7 @@ get '/' do
   @list_of_ids = Building.all.map { |building| building.id }
   @random_building1 = Building.find(@list_of_ids.shuffle!.pop)
   @random_building2 = Building.find(@list_of_ids.shuffle!.pop)
+  @winner = Building.get_taller_building(@random_building1.id, @random_building2.id)
   erb :index
 end
 
