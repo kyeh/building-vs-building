@@ -15,14 +15,22 @@ $(document).ready(function() {
     var building1 = new Array
     var building2 = new Array
     building1["name"] = $('#building1-name').attr("value");
-    building1["height"] = $('#building1-height').attr("value");
+    building1["height"] = parseInt($('#building1-height').attr("value"));
     building2["name"] = $('#building2-name').attr("value");
-    building2["height"] = $('#building2-height').attr("value");
+    building2["height"] = parseInt($('#building2-height').attr("value"));
 
-    var maxHeight = building1["height"] > building2["height"] ? building1["height"] : building2["height"]
+    var maxHeight = building1["height"]
+
+    if(building1["height"] < building2["height"]) {
+      maxHeight = building2["height"];
+    }
+    console.log(building1["height"])
+    console.log(building2["height"])
+    console.log(building1["height"] < building2["height"])
+    console.log(maxHeight)
 
     var data = {
-      labels: ["Building 1", "Building 2"],
+      labels: [building1["height"], building2["height"]],
       datasets: [
         {
           fillColor:"rgba(151,187,205,0.5)",
@@ -32,13 +40,15 @@ $(document).ready(function() {
       ]
     }
 
+    console.log(round(((maxHeight-700)/100 ))+1)
+
     var options = {
       //Boolean - If we want to override with a hard coded scale
       scaleOverride : true,
 
       //** Required if scaleOverride is true **
       //Number - The number of steps in a hard coded scale
-      scaleSteps : round(((maxHeight-700)/100 + 1)),
+      scaleSteps : round(((maxHeight-700)/100 ))+1,
       //Number - The value jump in the hard coded scale
       scaleStepWidth : 100,
       //Number - The scale starting value
