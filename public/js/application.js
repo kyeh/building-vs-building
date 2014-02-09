@@ -20,6 +20,6 @@ $(document).ready(function() {
         }
       ]
     }
-    var myNewChart = new Chart(ctx).Bar(data,{}});
+    new Chart(ctx).Bar(data,{});
   }
 });
