@@ -1,11 +1,33 @@
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Draggable + Sortable</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( "#sortable" ).sortable({
+      revert: true
+    });
+    $( "#draggable" ).draggable({
+      connectToSortable: "#sortable",
+      helper: "clone",
+      revert: "invalid"
+    });
+    $( "ul, img" ).disableSelection();
+  });
+  </script>
+</head>
+
 <body>
   <div class='container'>
-    <div class='sample-of-combatants'>
-      <img src='/img/output3.jpg' alt='Combatant 3' title='Combatant 3'>
-      <img src='/img/output4.jpg' alt='Combatant 4' title='Combatant 4'>
-      <img src='/img/output5.jpg' alt='Combatant 5' title='Combatant 5'>
-      <img src='/img/output6.jpg' alt='Combatant 6' title='Combatant 6'>
-      <img src='/img/output7.jpg' alt='Combatant 7' title='Combatant 7'>
+    <div class='sample-of-combatants' id='sortable'>
+      <img class="ui-state-default" src='/img/output3.jpg' alt='Combatant 3' title='Combatant 3'>
+      <img class="ui-state-default" src='/img/output4.jpg' alt='Combatant 4' title='Combatant 4'>
+      <img class="ui-state-default"  src='/img/output5.jpg' alt='Combatant 5' title='Combatant 5'>
+      <img class="ui-state-default"  src='/img/output6.jpg' alt='Combatant 6' title='Combatant 6'>
+      <img class="ui-state-default"  src='/img/output7.jpg' alt='Combatant 7' title='Combatant 7'>
     </div>
 
     <p>Which is taller?</p>

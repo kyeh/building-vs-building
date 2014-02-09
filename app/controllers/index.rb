@@ -9,24 +9,24 @@ get '/' do
   @random_building7 = Building.find(@list_of_ids.shuffle!.pop)
 
   image = MiniMagick::Image.open(@random_building3.photo_url)
-  image.resize "150x150"
-  image.write  "output3.jpg"
+  image.resize "125x125"
+  image.write  "public/img/output3.jpg"
 
   image = MiniMagick::Image.open(@random_building4.photo_url)
-  image.resize "150x150"
-  image.write  "output4.jpg"
+  image.resize "125x125"
+  image.write  "public/img/output4.jpg"
 
   image = MiniMagick::Image.open(@random_building5.photo_url)
-  image.resize "150x150"
-  image.write  "output5.jpg"
+  image.resize "125x125"
+  image.write  "public/img/output5.jpg"
 
   image = MiniMagick::Image.open(@random_building6.photo_url)
-  image.resize "150x150"
-  image.write  "output6.jpg"
+  image.resize "125x125"
+  image.write  "public/img/output6.jpg"
 
   image = MiniMagick::Image.open(@random_building7.photo_url)
-  image.resize "150x150"
-  image.write  "output7.jpg"
+  image.resize "125x125"
+  image.write  "public/img/output7.jpg"
 
   erb :drag_and_drop
 end
