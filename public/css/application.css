@@ -1,52 +1,64 @@
+body{
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+}
+
 .container {
   margin: 20px auto;
   width: 700px;
   padding: 5px 20px 20px 20px;
   border: 1px dotted black;
-  height: 800px;
+  height: 850px;
   }
 
 
-p{
+p.title{
   text-align: center;
-  font-family: Verdana,  sans-serif;
-  font-size: 27px;
+  font-family: 'Fascinate',  sans-serif;
+  font-size: 47px;
 }
 
-th {
-  text-align: left;
-}
 
 div.contestants {
-  /*display: inline;*/
   float: left;
   color: #00A0A2;
   width: 40%;
   height: 40%;
   background-color: #F0F0F9;
-  padding: 5% 1% 5% 1%; /* percent of the container div*/
-  margin: 5% 4% 10% 4%;
+  padding: 5% 1% 5% 1%;
+  margin: 5% 4% 8% 4%;
   border-radius: 10px;
 }
 
-#winner{
-  float: left;
-  padding: 13% 13% 13% 13%;
-  margin: 0 0 0 10%;
-  font-size: 37px;
+div.contestants.img{
+  float: center;
+}
+
+#answer{
+  font-size: 20px;
   color: #54A4A4;
+}
+
+a{
+  text-decoration: none;
+  color: #660198;
 }
 
 #choose{
   text-align: center;
+  font-size: 23px;
 }
 
-/* #winner:hover{
-  color: #A4A4A4;
-  background-color: #EFEFEF;
+#submit-answer{
+  color: #00A0A2;
+  border-radius: 10px;
+  background-color: #F0F0F9;
+  margin: 20px 0 0 0;
 }
-*/
 
+.right {
+  color: green;
+}
 .wrong {
   color: red;
 }

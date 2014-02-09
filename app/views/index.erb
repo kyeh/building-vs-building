@@ -1,24 +1,26 @@
+<link href='http://fonts.googleapis.com/css?family=Fascinate' rel='stylesheet' type='text/css'>
+
 <body>
   <div class='container'>
-    <p>Which is taller?</p>
+    <p class='title'>Which is taller?</p>
     <div class='contestants' id='combatant1'>
-      <%= @random_building1.name %>
+      <%= @random_building1.name %><br>
       <img src='<%= @random_building1.photo_url %>' alt='Combatant 2' title='Combatant 1'>
     </div>
 
     <div class='contestants' id='combatant2'>
-      <%= @random_building2.name %>
+      <%= @random_building2.name %><br>
       <img src='<%= @random_building2.photo_url %>' alt='Combatant 2' title='Combatant 2'>
     </div>
 
     <% if @winner %>
-    <div id='winner'>
+    <div id='answer'>
       <p>You answered <%= @guess.name %></p>
         <% if @guess == @winner %>
-        <h2>RIGHT</h2>
+        <h1 class="right">RIGHT</h1>
       <% else %>
-        <h2 class="wrong">WRONG</h2>
-        <%= @winner.name %> !
+        <h1 class="wrong">WRONG</h1>
+        <%= @winner.name %>!
         <br>
       <% end %>
       <a href='/'>Goto next question</a>
@@ -30,7 +32,7 @@
       <input name="combatant2" value="<%= @random_building2.id %>" type="hidden">
       <input type="radio" name="taller" value="combatant1"><%= @random_building1.name %><br>
       <input type="radio" name="taller" value="combatant2"><%= @random_building2.name %><br>
-      <input type="submit" value="Submit">
+      <input id="submit-answer" type="submit" value="Submit">
     </form>
     </div>
     <% end %>
