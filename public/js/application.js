@@ -24,10 +24,6 @@ $(document).ready(function() {
     if(building1["height"] < building2["height"]) {
       maxHeight = building2["height"];
     }
-    console.log(building1["height"])
-    console.log(building2["height"])
-    console.log(building1["height"] < building2["height"])
-    console.log(maxHeight)
 
     var data = {
       labels: [building1["height"], building2["height"]],
@@ -39,8 +35,6 @@ $(document).ready(function() {
         }
       ]
     }
-
-    console.log(round(((maxHeight-700)/100 ))+1)
 
     var options = {
       //Boolean - If we want to override with a hard coded scale
