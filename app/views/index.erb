@@ -11,9 +11,29 @@
       <img src='<%= @random_building2.photo_url %>' alt='Combatant 2' title='Combatant 2'>
     </div>
 
+    <% if @winner %>
     <div id='winner'>
-      <%= @winner.name %> !
+      <p>You answered <%= @guess.name %></p>
+        <% if @guess == @winner %>
+        <h2>RIGHT</h2>
+      <% else %>
+        <h2 class="wrong">WRONG</h2>
+        <%= @winner.name %> !
+        <br>
+      <% end %>
+      <a href='/'>Goto next question</a>
     </div>
+    <% else %>
+    <div id="choose">
+    <form action="/answer" method="post">
+      <input name="combatant1" value="<%= @random_building1.id %>" type="hidden">
+      <input name="combatant2" value="<%= @random_building2.id %>" type="hidden">
+      <input type="radio" name="taller" value="combatant1"><%= @random_building1.name %><br>
+      <input type="radio" name="taller" value="combatant2"><%= @random_building2.name %><br>
+      <input type="submit" value="Submit">
+    </form>
+    </div>
+    <% end %>
 
   </div>
 </body>
